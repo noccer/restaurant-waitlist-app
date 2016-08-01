@@ -52,65 +52,65 @@ $(document).ready(function() {
         $(homeRestaurant).append(homeStats);
 
         // If local Storage has no authentication token, render the link tag to non-admin page
-          var link = $('<a>')
+        var link = $('<a>')
           .attr('href', './waitingList_public.html?r_id=' + data[i].restaurantNameSuburb) // This need to be changed to the customer only queue list
           .append(homeRestaurant);
-          $('#restaurant-list').append(link);
+        $('#restaurant-list').append(link);
       }
     });
   });
 
   // Restaurant authentication:
-  $('#btn-signin').on('click', function(){
-      event.preventDefault();
-      $.ajax({
-        url: apiURL + 'signin',
-        data: {
-          restaurantEmail: $('input:eq(0)').val(),
-          password: $('input:eq(1)').val()
-        },
-        dataType: 'json',
-        method: 'POST',
-      }).done(function(data){
-        if(data){
-          console.log(data);
-          localStorage.setItem('Authorization', "Bearer " + data.token);
-          window.location.replace('./restaurantView.html?r_id=' + data.restaurant.restaurantNameSuburb);
-        } else {
-          console.log("Unable to log in!");
-        }
-      });
+  $('#btn-signin').on('click', function() {
+    event.preventDefault();
+    $.ajax({
+      url: apiURL + 'signin',
+      data: {
+        restaurantEmail: $('input:eq(0)').val(),
+        password: $('input:eq(1)').val()
+      },
+      dataType: 'json',
+      method: 'POST',
+    }).done(function(data) {
+      if (data) {
+        console.log(data);
+        localStorage.setItem('Authorization', "Bearer " + data.token);
+        window.location.replace('./restaurantView.html?r_id=' + data.restaurant.restaurantNameSuburb);
+      } else {
+        console.log("Unable to log in!");
+      }
     });
+  });
 
-    // Route to restaurant.html for the restaurant registration form
-    $('.btn-register').on('click', function(){
-        event.preventDefault();
-        window.location.replace('./register.html');
-      });
+  // Route to restaurant.html for the restaurant registration form
+  $('.btn-register').on('click', function() {
+    event.preventDefault();
+    window.location.replace('./register.html');
+  });
 
-    $('#btn-create-restaurant').on('click', function(){
-      event.preventDefault();
-      $.ajax({
-         url: apiURL + 'restaurant/add',
-         method: 'POST',
-         data: {
-           "postcode": $('#restaurant-postcode').val(),
-           "suburb": $('#restaurant-suburb').val(),
-           "address": $('#restaurant-address').val(),
-           "phone": $('#restaurant-phone').val(),
-           "website": $('#restaurant-website').val(),
-           "restaurantName": $('#restaurant-name').val(),
-           "cuisine": $('#restaurant-cuisine').val(),
-           "username": $('#restaurant-username').val(),
-           "password": $('#restaurant-password').val(),
-           "restaurantEmail": $('#restaurant-email').val()
-         }
-      }).done(function(data) {
-        //  location.reload();
-        window.location.replace('./home.html');
-         console.log("database should load new customer");
-      });
+  $('#btn-create-restaurant').on('click', function() {
+    event.preventDefault();
+    $.ajax({
+      url: apiURL + 'restaurant/add',
+      method: 'POST',
+      data: {
+        "postcode": $('#restaurant-postcode').val(),
+        "suburb": $('#restaurant-suburb').val(),
+        "address": $('#restaurant-address').val(),
+        "phone": $('#restaurant-phone').val(),
+        "website": $('#restaurant-website').val(),
+        "restaurantName": $('#restaurant-name').val(),
+        "cuisine": $('#restaurant-cuisine').val(),
+        "username": $('#restaurant-username').val(),
+        "password": $('#restaurant-password').val(),
+        "restaurantEmail": $('#restaurant-email').val()
+      }
+    }).done(function(data) {
+      //  location.reload();
+      window.location.replace('./home.html');
+      console.log("database should load new customer");
     });
+  });
 
 
 
