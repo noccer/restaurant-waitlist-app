@@ -240,8 +240,8 @@ $(document).ready(function() {
     console.log('log out');
     localStorage.removeItem('Authorization');
     // Pseudo coding:
-    window.location.replace('./home.html');
-    // redirect('/home.html');
+    window.location.replace('./index.html');
+    // redirect('/index.html');
   });
 }); //end doc ready
 

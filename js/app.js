@@ -107,7 +107,7 @@ $(document).ready(function() {
       }
     }).done(function(data) {
       //  location.reload();
-      window.location.replace('./home.html');
+      window.location.replace('./index.html');
       console.log("database should load new customer");
     });
   });
