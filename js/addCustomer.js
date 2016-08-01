@@ -1,5 +1,5 @@
 // var apiURL = 'https://niall-waitlist-app-backend.herokuapp.com/';
-var apiURL = 'http://localhost:3000';
+var apiURL = 'http://localhost:3000/';
 
 $(document).ready(function() {
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
           (moment(customerRef.finishedWaiting).valueOf() - momentNow.valueOf()) / 60000;
         waitingArray.push(delta);
       });
-      var eta = Math.max.apply(Math, waitingArray).toFixed(1);
+      var eta = Math.max.apply(Math, waitingArray).toFixed(0);
       if (eta < 1 && data[i].length !== 0) {
         eta = "Due";
       } else if (data[i].length === 0) {
