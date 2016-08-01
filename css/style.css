@@ -1,6 +1,7 @@
 html {}
 body {
   margin: 0;
+  background-color: #FFF9C4
 }
 a:focus {
   background: none;
@@ -41,7 +42,7 @@ footer {
   text-align: center;
   margin: 0 auto;
   height: 40px;
-  background: white;
+  background-color: rgba(#b6b6b6, 0.5)
 }
 .container {
   padding-top: 40px;
@@ -147,7 +148,7 @@ footer {
   border-radius: 3px;
   text-align: center;
   color: white;
-  background: #13747d;
+  background: #03A9F4;
   width: 100px;
   padding: 10px;
   display: flex;
