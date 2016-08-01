@@ -1,8 +1,8 @@
-var apiURL = 'https://waiting-list-jnp.herokuapp.com/';
-// var apiURL = 'http://localhost:3000/';
+// var apiURL = 'https://pristine-big-bend-44936.herokuapp.com/';
+var apiURL = 'http://localhost:3000/';
 
 $(document).ready(function() {
-
+   var dataSortedByETA = [];
    var restaurantNameSuburb = "";
    console.log(window.location);
 
@@ -17,10 +17,20 @@ $(document).ready(function() {
    }
    restaurantNameSuburb = getParameterByName('r_id');
    console.log(restaurantNameSuburb);
-   $.getJSON(apiURL + restaurantNameSuburb + "/public", function(data) {
+   $.getJSON(apiURL + restaurantNameSuburb, function(data) {
 
      var title = $('<h2>').text('australian-job-carlton');
      $('#restaurantTitle').append(title);
+     $.each(data, function() {
+       var dataSortedByETA = _.sortBy(data, 'finishedWaiting'); // Underscore magic!
+       console.log("data:"); //check data before
+       console.log(data);
+       console.log("dataSortedByETA:"); // check data after sorting
+       console.log(dataSortedByETA);
+       console.log("reshuffle data commencing:");
+       data = dataSortedByETA; // overwrite the data so it is SortedByETA
+       console.log("shuffle complete!"); // BOOM! We're sorted by ETA
+     });
 
       $.each(data, function(i) {
          var customerRef = data[i];
