@@ -1,4 +1,4 @@
-var apiURL = 'http://localhost:3000/';
+var apiURL = 'https://niall-waitlist-app-backend.herokuapp.com/';
 
 $(document).ready(function() {
    var dataSortedByETA = [];
