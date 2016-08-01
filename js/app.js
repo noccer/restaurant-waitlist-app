@@ -39,7 +39,7 @@ $(document).ready(function() {
             (moment(data[i].customers[j].finishedWaiting).valueOf() - momentNow.valueOf()) / 60000;
           waitingArray.push(delta);
         });
-        var eta = Math.max.apply(Math, waitingArray).toFixed(1);
+        var eta = Math.max.apply(Math, waitingArray).toFixed(0);
         if (eta < 1 && data[i].customers.length !== 0) {
           eta = "Due";
         } else if (data[i].customers.length === 0) {
