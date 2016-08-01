@@ -1,4 +1,4 @@
-var apiURL = 'https://niall-waitlist-app-backend.herokuapp.com/';
+var apiURL = 'https://niall-waitlist-app-backend-old.herokuapp.com/';
 // var apiURL = 'http://localhost:3000/';
 
 $(document).ready(function() {
