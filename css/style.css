@@ -129,7 +129,7 @@ h1.logo-font {
   margin: 20px;
 }
 .customer-row {
-  /*border-bottom: 10px solid white;*/
+  border-bottom: 1px solid white;
   padding: 10px;
   color: white;
   background: #03A9F4;
