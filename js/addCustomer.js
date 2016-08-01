@@ -52,9 +52,9 @@ $(document).ready(function() {
         .addClass('name')
         .text(customerRef.customerName);
       var customerPhone = $('<td>')
-         .attr('width', '300px')
-         .addClass('name')
-         .text(customerRef.phone);
+        .attr('width', '300px')
+        .addClass('name')
+        .text(customerRef.phone);
       // insert time tracking
       var now = new Date();
       var momentNow = moment(now);
@@ -63,54 +63,54 @@ $(document).ready(function() {
         var delta =
           (moment(customerRef.finishedWaiting).valueOf() - momentNow.valueOf()) / 60000;
         waitingArray.push(delta);
-         });
-         var eta = Math.max.apply(Math, waitingArray).toFixed(1);
-         if (eta < 1 && data[i].length !== 0) {
-            eta = "Due";
-         } else if (data[i].length === 0) {
-            eta = "--";
-         }
-         console.log(waitingArray);
-         console.log(eta);
-         globalEta = eta;
-         var customerTimer = $('<td>')
-            .attr('width', '20px')
-            .text(eta)
-            .addClass('timer');
-         // end time tracking
+      });
+      var eta = Math.max.apply(Math, waitingArray).toFixed(1);
+      if (eta < 1 && data[i].length !== 0) {
+        eta = "Due";
+      } else if (data[i].length === 0) {
+        eta = "--";
+      }
+      console.log(waitingArray);
+      console.log(eta);
+      globalEta = eta;
+      var customerTimer = $('<td>')
+        .attr('width', '20px')
+        .text(eta)
+        .addClass('timer');
+      // end time tracking
 
-        //  var formTd = $('<td>');
-        //  var delayForm = $('<form>').addClass('delayForm flex');
-        //  var customerDelayField = $('<input>')
-        //     .attr('type', 'number')
-        //     .attr('placeholder', '#');
-        //  var customerDelayBtn = $('<button>')
-        //     .addClass('btn-remove')
-        //     .text('Do it');
-        //  var formComplete = $(delayForm).append(customerDelayField, customerDelayBtn);
-        //  $(formTd).append(formComplete);
+      //  var formTd = $('<td>');
+      //  var delayForm = $('<form>').addClass('delayForm flex');
+      //  var customerDelayField = $('<input>')
+      //     .attr('type', 'number')
+      //     .attr('placeholder', '#');
+      //  var customerDelayBtn = $('<button>')
+      //     .addClass('btn-remove')
+      //     .text('Do it');
+      //  var formComplete = $(delayForm).append(customerDelayField, customerDelayBtn);
+      //  $(formTd).append(formComplete);
 
-         var customerEditRemoveBtnTd = $('<td>').addClass('flex');
-         var customerRemoveBtn = $('<button>')
-            .addClass('btn-remove '+customerRef.phone)
-            // .attr('id', customerRef.phone)
-            .css('margin-left', '15px')
-            .text('Remove')
-            .on('click', deleteMe);
-         var customerEditBtn = $('<button>')
-            // .attr('id', customerRef.phone)
-            .addClass('btn-remove '+customerRef.phone)
-            .text('Edit')
-            .on('click', editMe);
-         $(customerEditRemoveBtnTd).append(customerEditBtn, customerRemoveBtn);
+      var customerEditRemoveBtnTd = $('<td>').addClass('flex');
+      var customerRemoveBtn = $('<button>')
+        .addClass('btn-remove ' + customerRef.phone)
+        // .attr('id', customerRef.phone)
+        .css('margin-left', '15px')
+        .text('Remove')
+        .on('click', deleteMe);
+      var customerEditBtn = $('<button>')
+        // .attr('id', customerRef.phone)
+        .addClass('btn-remove ' + customerRef.phone)
+        .text('Edit')
+        .on('click', editMe);
+      $(customerEditRemoveBtnTd).append(customerEditBtn, customerRemoveBtn);
 
-         $(customerRow).append(
-            customerHeads,
-            customerName,
-            customerPhone,
-            customerTimer,
-            customerEditRemoveBtnTd
-         );
+      $(customerRow).append(
+        customerHeads,
+        customerName,
+        customerPhone,
+        customerTimer,
+        customerEditRemoveBtnTd
+      );
       $('#customerListAdmin').append(customerRow);
 
     });
@@ -154,7 +154,7 @@ $(document).ready(function() {
           phone: customer_mobile,
           heads: customer_heads,
           eta: customer_eta
-          // isVip: customer_vip
+            // isVip: customer_vip
         }
       }).done(function() {
         location.reload();
