@@ -1,5 +1,5 @@
-var apiURL = 'https://niall-waitlist-app-backend.herokuapp.com/';
-// var apiURL = 'http://localhost:3000/';
+// var apiURL = 'https://niall-waitlist-app-backend.herokuapp.com/';
+var apiURL = 'http://localhost:3000/';
 
 $(document).ready(function() {
 
@@ -11,7 +11,8 @@ $(document).ready(function() {
         var image = ($('<img>')
           .css('margin-left', '55px')
           .attr({
-            'src': './images/logo.png',
+            // 'src': './images/logo.png',
+            'src': './images/mcd.png',
             'width': '72px',
             'height': '72px',
             'alt': 'data[i].restaurantName'
