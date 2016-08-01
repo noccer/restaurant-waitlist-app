@@ -1,7 +1,9 @@
-html {}
+html {
+  font-family: 'Chelsea Market', cursive;
+}
 body {
   margin: 0;
-  background-color: #FFF9C4
+  background-color: rgba(255, 249, 196, 0.25)
 }
 a:focus {
   background: none;
@@ -25,8 +27,8 @@ p {
   font-size: 14px;
 }
 #wrapper {
-  width: 960px;
-  margin: 0 auto;
+  max-width: 960px;
+  margin: 0 15px;
   text-align: center;
 }
 header {
@@ -52,6 +54,9 @@ footer {
   justify-content: flex-start;
   text-align: center;
   flex-wrap: wrap;
+}
+h1.logo-font {
+  font-size: 75px;
 }
 
 /*/////////////////////////////////////*/
@@ -142,19 +147,20 @@ footer {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  border-radius: 3px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 .home-stats {
-  border-radius: 3px;
+  border-radius: 10px;
   text-align: center;
-  color: white;
+  color: #212121;
   background: #03A9F4;
   width: 100px;
   padding: 10px;
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-  border-left: 1px dashed #ccc;
+  border: 1px solid #ccc;
 }
 .customerTable {
   margin: 0 auto;
@@ -212,7 +218,7 @@ thead {
   font-size: 12px;
 }
 .queue-num {
-  text-align: left;
+  text-align: center;
   ;
   font-size: 80px;
   font-weight: 500;
@@ -263,7 +269,7 @@ BUTTONS
   margin: 10px;
   border-radius: 5px;
   font-size: 14px;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 .topright-btns {}
@@ -302,7 +308,7 @@ BUTTONS
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 .btn-remove {
